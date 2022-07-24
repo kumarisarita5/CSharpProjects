@@ -1,0 +1,15 @@
+D:\Two\CSharpProjects\MatchGame\bin\Debug\MatchGame.exe.config
+D:\Two\CSharpProjects\MatchGame\bin\Debug\MatchGame.exe
+D:\Two\CSharpProjects\MatchGame\bin\Debug\MatchGame.pdb
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.csproj.AssemblyReference.cache
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MainWindow.g.cs
+D:\Two\CSharpProjects\MatchGame\obj\Debug\App.g.cs
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame_MarkupCompile.cache
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame_MarkupCompile.lref
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MainWindow.baml
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.g.resources
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.Properties.Resources.resources
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.csproj.GenerateResource.cache
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.csproj.CoreCompileInputs.cache
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.exe
+D:\Two\CSharpProjects\MatchGame\obj\Debug\MatchGame.pdb
