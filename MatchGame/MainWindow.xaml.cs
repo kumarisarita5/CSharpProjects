@@ -28,6 +28,7 @@ namespace MatchGame
         DispatcherTimer timer = new DispatcherTimer();
         int tenthOfSecondElasped;
         int matchFound;
+        float maxScore= 15;
 
 
         public MainWindow()
@@ -48,33 +49,51 @@ namespace MatchGame
             if (matchFound == 8)
             {
                 timer.Stop();
+                if (maxScore > (tenthOfSecondElasped / 10F))
+                {
+                    maxScore = (tenthOfSecondElasped / 10F);
+                }
+                maxScoreBlock.Text = maxScore.ToString() + " s";
                 timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
             }
         }
 
         private void SetUpGame()
         {
-            List<string> animalEmoji = new List<String>()
+            List<string> animalList = new List<string>()
             {
-                "🐘","🐻",
-                "🐍","🦁",
-                "🦁","🐻",
-                "🐘","🐍",
-                "🐼","🐒",
-                "🐒","🐼",
-                "🐄","🐄",
-                "🐈","🐈"
+                "🐄","🐒","🐼","🐍","🐘","🐻","🐕","🐈","🦌","🦁","🐇","🐰"
             };
 
+            List<bool> takenAnimal = new List<bool>();
+
+            for(int i = 0;i< animalList.Count; i++)
+            {
+                takenAnimal.Add(false);
+            }
+
             Random random = new Random();
+            List<string> animalEmoji = new List<string>();
+
+            for ( ; animalEmoji.Count < 16;)
+            {
+                int indexOfAnimal = random.Next(animalList.Count);
+                if (!takenAnimal[indexOfAnimal])
+                {
+                    animalEmoji.Add(animalList[indexOfAnimal]);
+                    animalEmoji.Add(animalList[indexOfAnimal]);
+                    takenAnimal[indexOfAnimal] = true;
+                }
+            }
 
             foreach(TextBlock textBlock in MainGrid.Children.OfType<TextBlock>())
             {
-                if(textBlock.Name != "timeTextBlock")
+                if(textBlock.Name != "timeTextBlock" && textBlock.Name!="maxScoreBlock")
                 {
                     int index = random.Next(animalEmoji.Count());
                     string nextEmoji = animalEmoji[index];
                     textBlock.Text = nextEmoji;
+                    textBlock.Visibility = Visibility.Visible;
                     animalEmoji.RemoveAt(index);
                 }
             }
@@ -82,6 +101,7 @@ namespace MatchGame
             timer.Start();
             tenthOfSecondElasped = 0;
             matchFound = 0;
+            maxScoreBlock.Text = maxScore.ToString() + " s";
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
